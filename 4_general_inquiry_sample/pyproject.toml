@@ -8,7 +8,7 @@ dependencies = [
     "openai==1.55.3",
     "python-dotenv==1.0.0",
     "requests==2.31.0",
-    "scrapy==2.11.0",
+    "scrapy==2.11.2",
     "beautifulsoup4==4.12.2",
 
 ]
