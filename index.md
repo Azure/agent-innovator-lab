@@ -42,10 +42,8 @@ Agent Innovator Lab은 현재 5개의 핸즈온을 제공하고 있습니다. �
 
 ### 접근 및 테스트해야 할 URL
 1. Azure OpenAI Service 액세스: https://go.microsoft.com/fwlink/?linkid=2222006
-2. Azure AI Foundry Getting Started (AI Hub 및 프로젝트 생성): https://int.ai.azure.com/explore/gettingstarted
+2. Azure AI Foundry Getting Started (AI Foundry 프로젝트 생성): https://int.ai.azure.com/explore/gettingstarted
 3. 필수 설정 및 권한 부여 필요 사항
-- Storage Blob Data Contributor 역할 할당
-- Azure ML 및 Storage Account 접근 권한 필요
 - 환경 변수 수정 (.env 파일 적용 필요)
 4. Agent Innovator Lab 기본 코드 수행
 - https://github.com/Azure/agent-innovator-lab/blob/main/0_basic-agent/SK/1_basic-concept-with-sk.ipynb
@@ -64,7 +62,8 @@ Agent Innovator Lab은 현재 5개의 핸즈온을 제공하고 있습니다. �
     - content safety 및 cost control
     - 답변 품질과 응답속도 사이 의 trade-off 고려
 
-### 로컬 환경 구축
+### 로컬환경
+
 ```bash
 # Python 가상 환경을 만듭니다.
 python -m venv venv
