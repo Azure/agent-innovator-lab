@@ -33,6 +33,25 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      # Install Python and nbconvert
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install nbconvert
+        run: pip install nbconvert
+      # Convert notebooks/*.ipynb files into HTML docs
+      - name: Convert ipynb to HTML
+        run: |
+          mkdir -p notebooks_html
+          jupyter nbconvert --to html --output-dir notebooks_html notebooks/*.ipynb
+      # Copy the converted HTML to your Jekyll site folder (here _notebooks, change to _posts if necessary)
+      - name: Copy HTML notebooks to site
+        run: |
+          mkdir -p ./_notebooks
+          cp notebooks_html/*.html ./_notebooks/
+      
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1 # v1.161.0
         with:
