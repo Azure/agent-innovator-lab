@@ -41,16 +41,30 @@ jobs:
           python-version: '3.10'
       - name: Install nbconvert
         run: pip install nbconvert
-      # Convert notebooks/*.ipynb files into HTML docs
+      # Convert all ipynb files recursively into HTML docs
       - name: Convert ipynb to HTML
         run: |
           mkdir -p notebooks_html
-          jupyter nbconvert --to html --output-dir notebooks_html notebooks/*.ipynb
-      # Copy the converted HTML to your Jekyll site folder (here _notebooks, change to _posts if necessary)
+          find . -name "*.ipynb" -not -path "./.git/*" -not -path "./notebooks_html/*" | while read notebook; do
+            # Get relative directory path and create corresponding output directory
+            dir_path=$(dirname "$notebook")
+            output_dir="notebooks_html/${dir_path#./}"
+            mkdir -p "$output_dir"
+            # Convert notebook to HTML maintaining directory structure
+            jupyter nbconvert --to html --output-dir "$output_dir" "$notebook"
+          done
+      # Copy the converted HTML to your Jekyll site folder maintaining directory structure
       - name: Copy HTML notebooks to site
         run: |
           mkdir -p ./_notebooks
-          cp notebooks_html/*.html ./_notebooks/
+          # Copy all HTML files maintaining directory structure
+          find notebooks_html -name "*.html" | while read html_file; do
+            # Get relative path and create corresponding directory in _notebooks
+            rel_path=${html_file#notebooks_html/}
+            target_dir="./_notebooks/$(dirname "$rel_path")"
+            mkdir -p "$target_dir"
+            cp "$html_file" "$target_dir/"
+          done
       
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1 # v1.161.0
