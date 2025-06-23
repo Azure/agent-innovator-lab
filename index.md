@@ -15,26 +15,26 @@ permalink: /
 Agent Innovator Lab은 화이트보딩과 핸즈온을 통해 프로덕션 런칭에 필요한 에이전트 설계 패턴, 평가 중심 방법론을 같이 고민하고 체험하는 1-day 워크숍입니다. 기존 핸즈온과 달리 코드베이스 일방향 진행이 아니라 (고객마다 적용할 에이전트 패턴이 다르고 목표도 다르고 에이전트 프레임워크도 다르기 때문입니다.) 브레인스토밍 및 화이트보딩 세션을 진행하게 됩니다.
 
 
-1. 1-day workshop (4-7 hours depending on customer)
-2. Hackathon starter code
-3. Reference guide for RAG/Multi-Agent design patterns
+1. 1일 워크샵 (청중 수준에 따라 4시간에서 7시간 정도 소요)
+2. 해커톤 스타터 코드
+3. RAG/멀티 에이전트 디자인 패턴 참조 가이드
 
-[**Requirements**](#requirements) | [**Get started**](#get-started) 
+[**요구 사항**](#requirements) | [**시작하기**](#get-started) 
 
 ----------------------------------------------------------------------------------------
 
-## List of workshops
+## 핸즈온 목록
 
 Agent Innovator Lab은 현재 5개의 핸즈온을 제공하고 있습니다. 각 핸즈온은 아래와 같은 주제를 다루고 있습니다.:
 
-| Title  | Description and Link  |
+| 제목  | 설명 및 링크  |
 |-------|-----|
-| Lab 0. Basic RAG | [Azure AI Search기반 기본 RAG 환경 설정](https://github.com/Azure/agent-innovator-lab/tree/main/0_basic-rag)  |
-| Lab 0. Basic Agent | [기본 에이전트 체험 (SK, AutoGen, LangGraph)](https://github.com/Azure/agent-innovator-lab/tree/main/0_basic-agent) |
-| Lab 1. Agentic Design Pattern | [4가지 주요 에이전틱 패턴인 Reflection, Tool Usage, Planning, and Multi-Agent Systems을  톺아보기](https://github.com/Azure/agent-innovator-lab/tree/main/1_agentic-design-ptn) |
-| Lab 2. Evaluation Design Pattern | [Evaluation-driven 핸즈온을 통해 1회성 개발이 아닌 평가 파이프라인을 구축](https://github.com/Azure/agent-innovator-lab/tree/main/2_eval-design-ptn)  |
-| Lab 3. Optimization Design Pattern | [cache, prompt, 메모리 관리 등 특정 영역 최적화 실험](https://github.com/Azure/agent-innovator-lab/tree/main/2_eval-design-ptn)  |
-| Lab Intermission. Agentic Workflow Design Lab | [에이전틱 패턴 화이트보딩](lab_intermission) |
+| Lab 0. RAG 기본 | [Azure AI Search기반 기본 RAG 환경 설정](https://github.com/Azure/agent-innovator-lab/tree/main/0_basic-rag)  |
+| Lab 0. 에이전트 기본 | [기본 에이전트 체험 (SK, AutoGen, LangGraph)](https://github.com/Azure/agent-innovator-lab/tree/main/0_basic-agent) |
+| Lab 1. 에이전틱 디자인 패턴 | [4가지 주요 에이전틱 패턴인 Reflection, Tool Usage, Planning, and Multi-Agent Systems을  톺아보기](https://github.com/Azure/agent-innovator-lab/tree/main/1_agentic-design-ptn) |
+| Lab 2. 디자인 패턴 평가 | [Evaluation-driven 핸즈온을 통해 1회성 개발이 아닌 평가 파이프라인을 구축](https://github.com/Azure/agent-innovator-lab/tree/main/2_eval-design-ptn)  |
+| Lab 3. 디자인 패턴 최적화 | [cache, prompt, 메모리 관리 등 특정 영역 최적화 실험](https://github.com/Azure/agent-innovator-lab/tree/main/2_eval-design-ptn)  |
+| Lab Intermission. 에이전틱 워크플로우 디자인 랩 | [에이전틱 패턴 화이트보딩](lab_intermission) |
 
 
 ## 사전 준비 사항
@@ -64,19 +64,19 @@ Agent Innovator Lab은 현재 5개의 핸즈온을 제공하고 있습니다. �
     - content safety 및 cost control
     - 답변 품질과 응답속도 사이 의 trade-off 고려
 
-### 로컬환경경 
+### 로컬 환경 구축
 ```bash
-# Create a virtual environment
+# Python 가상 환경을 만듭니다.
 python -m venv venv
 
-# Activate the virtual environment
-# On Windows
+# 가상 환경을 활성화합니다.
+# Windows에서 활성화하는 방법
 venv\Scripts\activate
 
-# On macOS/Linux
+# macOS 또는 리눅스에서 활성화하는 방법
 source venv/bin/activate
 
-# Set up your environment
+# 실습 환경을 설정합니다.
 git clone https://github.com/Azure/agent-innovator-lab.git
 
 cd agent-innovator-lab 
@@ -89,7 +89,7 @@ pip install -r requirements.txt
 ```bash
 conda create -n venv_agentlab python=3.11
 
-# Set up your environment
+# 실습 환경을 설정합니다.
 git clone https://github.com/Azure/agent-innovator-lab.git
 
 cd agent-innovator-lab 
@@ -98,24 +98,17 @@ pip install -r requirements.txt
 ```
 
 
-## Contributing
+## 기여
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+이 프로젝트는 다양한 기여와 제안을 환영합니다. 대부분의 기여는 Contributor License Agreement(이하 CLA, 기여자 라이선스 계약)에 동의하셔야 하며, 이를 통해 귀하가 해당 기여를 할 권리가 있고 실제로 그렇게 함으로써 저희에게 해당 기여물을 사용할 권리를 부여함을 선언하게 됩니다. 자세한 내용은 https://cla.opensource.microsoft.com에서 확인하실 수 있습니다.
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+Pull Request(이하 PR)를 제출하시면 CLA 봇이 자동으로 CLA 제출 필요 여부를 확인하고, 상태 체크나 코멘트 등으로 PR에 표시합니다. 봇의 안내에 따라 절차를 진행해주시면 됩니다. CLA는 한 번만 제출하시면, 해당 CLA를 사용하는 모든 저장소에 적용됩니다.
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+이 프로젝트는 [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) 를 채택하고 있습니다. 자세한 내용은 행동 강령 FAQ를 참고하시거나, 추가적인 질문이나 의견이 있으실 경우 언제든 [opencode@microsoft.com](mailto:opencode@microsoft.com) 으로 연락해주시기 바랍니다.
 
-## Trademarks
+## 상표권
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
-Any use of third-party trademarks or logos are subject to those third-party's policies.
+이 프로젝트에는 프로젝트, 제품 또는 서비스와 관련된 상표나 로고가 포함되어 있을 수 있습니다.
+Microsoft 상표 또는 로고의 사용은 반드시 [Microsoft 상표 및 브랜드 가이드라인](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general)을 준수해야 하며, 이에 따라야 합니다.
+이 프로젝트의 수정된 버전에서 Microsoft 상표 또는 로고를 사용할 경우, 사용자에게 혼동을 주거나 Microsoft의 공식 후원 또는 지원을 암시해서는 안 됩니다.
+제3자 상표 또는 로고의 사용은 해당 제3자의 정책을 따라야 합니다.
