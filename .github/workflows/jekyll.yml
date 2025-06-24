@@ -33,6 +33,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      # Install Python and nbconvert
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install nbconvert
+        run: pip install nbconvert
+      # Convert all ipynb files to HTML in their original directories
+      - name: Convert ipynb to HTML
+        run: |
+          find . -name "*.ipynb" -not -path "./.git/*" | while read notebook; do
+            # Get the directory where the notebook is located
+            notebook_dir=$(dirname "$notebook")
+            # Convert notebook to HTML in the same directory
+            jupyter nbconvert --to html --output-dir "$notebook_dir" "$notebook"
+          done
+      
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1 # v1.161.0
         with:
@@ -47,6 +65,16 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+      
+      # Convert .ipynb links to .html links in generated HTML files
+      - name: Convert ipynb links to html links
+        run: |
+          find ./_site -name "*.html" | while read html_file; do
+            # Replace .ipynb links with .html links in href attributes
+            sed -i 's/href="\([^"]*\)\.ipynb"/href="\1.html"/g' "$html_file"
+            # Also handle relative path links
+            sed -i 's/href="\([^"]*\/[^"]*\)\.ipynb"/href="\1.html"/g' "$html_file"
+          done
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
