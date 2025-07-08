@@ -28,7 +28,7 @@ ipywidgets==8.1.5
 pyyaml~=6.0.2
 pyarrow==19.0.1
 llama-index==0.12.28
-llama-index-core==0.12.28
+llama-index-core==0.12.41
 networkx
 faiss-cpu==1.10.0
 scrapy==2.13.0
