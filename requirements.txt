@@ -33,7 +33,7 @@ pyarrow==19.0.1
 # llama-index==0.12.28
 # llama-index-core==0.12.28
 # networkx
-scrapy==2.13.0
+scrapy==2.13.4
 requests>=2.31.0
 nbimporter>=0.3.4
 httpx>=0.24.1
