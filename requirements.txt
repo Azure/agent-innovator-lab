@@ -1,9 +1,12 @@
 agent-framework==1.0.0b251016
+agent-framework-azure-ai==1.0.0b251016
+agent-framework-core==1.0.0b251120
+azure-ai-agents==1.2.0b5
 azure-search-documents==11.5.2
 azure-identity
 openai>=1.70.0
-datasets
-python-dotenv
+datasets==2.16.1    
+python-dotenv==1.1.1
 tenacity==9.0.0
 pandas==2.2.3 
 tiktoken==0.8.0
@@ -15,7 +18,6 @@ azure-ai-evaluation==1.8.0
 # autogen-agentchat==0.4.6
 # autogen-ext==0.4.6
 langchain-openai==0.3.4
-azure-genai-utils==0.0.2.20
 promptflow-devkit==1.17.2
 azure-ai-ml==1.24.0
 # ModuleNotFoundError: No module named 'bs4'
@@ -31,7 +33,6 @@ pyarrow==19.0.1
 # llama-index==0.12.28
 # llama-index-core==0.12.28
 # networkx
-faiss-cpu==1.10.0
 scrapy==2.13.0
 requests>=2.31.0
 nbimporter>=0.3.4
